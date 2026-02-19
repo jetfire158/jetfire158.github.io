@@ -1,216 +1,209 @@
-/* ==== GOOGLE FONT IMPORT ==== */
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600&display=swap');
 
-/* ======================================================
-   BASE VARIABLES
-====================================================== */
-
-body{
-  --primary-bg:#2b0004;
-  --secondary-bg:#000000b8;
-}
-
-/* ======================================================
-   MAIN CONTAINER
-====================================================== */
+body{--primary-bg:#2b0004;--secondary-bg:#000000b8;}
 
 main{
-  position:relative;
-  overflow:hidden;
-  background:transparent !important;
-  color:red;
-  font-family:'Rajdhani',sans-serif;
+position:relative;
+overflow:hidden;
+clip-path:inset(0);
+background:transparent !important;
+color:red;
+font-family:'Rajdhani',sans-serif;
 }
 
-/* ======================================================
-   LAYER 1 FIXED BACKGROUND IMAGE
-====================================================== */
-
+/* background image */
 body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  z-index:-2;
-  pointer-events:none;
-
-  background:url('https://i.imgur.com/v6ZLUBh.jpeg') center/cover no-repeat;
+content:"";
+position:fixed;
+inset:0;
+z-index:-2;
+pointer-events:none;
+background:url('https://i.imgur.com/v6ZLUBh.jpeg') center/cover no-repeat;
 }
 
-/* ======================================================
-   LAYER 2 EMBEDDED RED CIRCUITRY
-====================================================== */
+/* ================= ENERGY PULSE LAYER (REPLACES LINEAR GRADIENT) ================= */
 
 main::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  z-index:0;
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100vw;
+height:100vh;
+pointer-events:none;
+z-index:0;
 
-  /* subtle flowing red energy */
-  background:
-    repeating-linear-gradient(
-      180deg,
-      transparent 0%,
-      rgba(255,30,30,.14) 2%,
-      rgba(255,30,30,.04) 3%,
-      transparent 6%,
-      transparent 30%
-    ),
-    repeating-linear-gradient(
-      181deg,
-      transparent 0%,
-      rgba(255,70,70,.05) 1%,
-      rgba(255,70,70,.18) 2%,
-      rgba(255,70,70,.05) 3%,
-      transparent 5%,
-      transparent 36%
-    );
+background:
+radial-gradient(circle,rgba(255,120,120,.45) 0%,rgba(255,60,60,.22) 30%,transparent 75%),
+radial-gradient(circle,rgba(255,100,100,.42) 0%,rgba(255,50,50,.20) 32%,transparent 78%),
+radial-gradient(circle,rgba(255,140,140,.40) 0%,rgba(255,70,70,.18) 28%,transparent 76%),
+radial-gradient(circle,rgba(255,110,110,.38) 0%,rgba(255,50,50,.18) 34%,transparent 80%),
+radial-gradient(circle,rgba(255,130,130,.40) 0%,rgba(255,60,60,.20) 30%,transparent 78%),
+radial-gradient(circle,rgba(255,150,150,.38) 0%,rgba(255,70,70,.18) 35%,transparent 82%),
+radial-gradient(circle,rgba(255,160,160,.38) 0%,rgba(255,70,70,.18) 30%,transparent 78%),
+radial-gradient(circle,rgba(255,160,160,.38) 0%,rgba(255,70,70,.18) 30%,transparent 78%),
+radial-gradient(circle,rgba(255,140,140,.35) 0%,rgba(255,60,60,.16) 34%,transparent 82%),
+radial-gradient(circle,rgba(255,140,140,.35) 0%,rgba(255,60,60,.16) 34%,transparent 82%);
 
-  background-size:100% 520%,100% 620%;
+background-repeat:no-repeat;
 
-  animation:
-    circuitFlowA 160s linear infinite,
-    circuitFlowB 120s linear infinite;
+background-size:
+26% 26%,22% 22%,28% 28%,20% 20%,24% 24%,
+23% 23%,25% 25%,25% 25%,21% 21%,21% 21%;
 
-  /* NEW CIRCUIT SVG MASK */
-  -webkit-mask-image:url("https://gist.githubusercontent.com/jetfire158/b78bee35bd71c599b6cd8bdd88493c4a/raw/4b2a314b579a4b672c4c1dbc4f702a54afe77d45/electric_circuit.svg");
-  mask-image:url("https://gist.githubusercontent.com/jetfire158/b78bee35bd71c599b6cd8bdd88493c4a/raw/4b2a314b579a4b672c4c1dbc4f702a54afe77d45/electric_circuit.svg");
+animation:energySpider 3.8s steps(4,end) infinite;
 
-  -webkit-mask-size:cover;
-  mask-size:cover;
-  -webkit-mask-repeat:no-repeat;
-  mask-repeat:no-repeat;
+-webkit-mask-image:url("https://gist.githubusercontent.com/jetfire158/b78bee35bd71c599b6cd8bdd88493c4a/raw/4b2a314b579a4b672c4c1dbc4f702a54afe77d45/electric_circuit.svg");
+mask-image:url("https://gist.githubusercontent.com/jetfire158/b78bee35bd71c599b6cd8bdd88493c4a/raw/4b2a314b579a4b672c4c1dbc4f702a54afe77d45/electric_circuit.svg");
 
-  mix-blend-mode:screen;
-  opacity:.6;
+-webkit-mask-size:cover;
+mask-size:cover;
+-webkit-mask-repeat:no-repeat;
+mask-repeat:no-repeat;
 
-  filter:
-    blur(.25px)
-    drop-shadow(0 0 3px rgba(255,40,40,.25))
-    drop-shadow(0 0 12px rgba(255,20,20,.10));
+mix-blend-mode:screen;
+opacity:.6;
+
+filter:blur(.6px)
+brightness(1.1)
+contrast(1.15)
+drop-shadow(0 0 3px rgba(255,40,40,.25))
+drop-shadow(0 0 12px rgba(255,20,20,.10));
 }
 
-/* DEPTH FADE embeds circuits into background */
+/* depth fade */
 main::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  z-index:1;
+content:"";
+position:fixed;
+inset:0;
+pointer-events:none;
+z-index:0;
 
-  background:radial-gradient(
-    circle at center,
-    transparent 45%,
-    rgba(0,0,0,.35) 100%
-  );
+/* faint circuit color */
+background-color:#ff2a2a;
 
-  mix-blend-mode:multiply;
+-webkit-mask-image:url("https://gist.githubusercontent.com/jetfire158/b78bee35bd71c599b6cd8bdd88493c4a/raw/4b2a314b579a4b672c4c1dbc4f702a54afe77d45/electric_circuit.svg");
+mask-image:url("https://gist.githubusercontent.com/jetfire158/b78bee35bd71c599b6cd8bdd88493c4a/raw/4b2a314b579a4b672c4c1dbc4f702a54afe77d45/electric_circuit.svg");
+
+-webkit-mask-size:cover;
+mask-size:cover;
+-webkit-mask-repeat:no-repeat;
+mask-repeat:no-repeat;
+
+opacity:.07;
+mix-blend-mode:screen;
+
 }
 
-/* ======================================================
-   PANELS ABOVE CIRCUITS
-====================================================== */
-
+/* panels above circuitry */
 .character .profile,
 expandable-item{
-  position:relative;
-  z-index:2;
+position:relative;
+z-index:2;
 }
 
-/* ======================================================
-   EXPANDABLE SECTIONS
-====================================================== */
-
 expandable-item::part(header){
-  background:rgba(0,0,0,.4);
-  backdrop-filter:blur(4px);
-  border:1px solid rgba(204,255,0,.2);
-  font-weight:500;
+background:rgba(0,0,0,.4);
+backdrop-filter:blur(4px);
+border:1px solid rgba(204,255,0,.2);
+font-weight:500;
 }
 
 expandable-item::part(name){
-  color:red;
-  font-weight:600;
-  letter-spacing:.05em;
+color:red;
+font-weight:600;
+letter-spacing:.05em;
 }
 
 expandable-item::part(summary){
-  color:red;
-  font-weight:400;
+color:red;
+font-weight:400;
 }
 
 expandable-item::part(base){
-  background-color:rgba(0,0,0,.4);
-  border:1px solid rgba(204,255,0,.2);
+background-color:rgba(0,0,0,.4);
+border:1px solid rgba(204,255,0,.2);
 }
 
 expandable-item::part(body){
-  color:white;
-  background-color:rgba(0,0,0,.4);
-  border:1px solid rgba(204,255,0,.2);
-  font-weight:300;
+color:white;
+background-color:rgba(0,0,0,.4);
+border:1px solid rgba(204,255,0,.2);
+font-weight:300;
 }
 
 expandable-item::part(arrow){
-  color:yellow;
+color:yellow;
 }
-
-/* ======================================================
-   PROFILE PANEL
-====================================================== */
 
 main .character .profile{
-  background-color:rgba(0,0,0,.8);
-  color:red;
-  border:1px solid rgba(204,255,0,.5);
-  font-weight:300;
+background-color:rgba(0,0,0,.8);
+color:red;
+border:1px solid rgba(204,255,0,.5);
+font-weight:300;
 }
 
-/* hide character name */
 .name{display:none;}
-
-/* ======================================================
-   PANEL HOVER GLOW
-====================================================== */
 
 expandable-item::part(base),
 expandable-item::part(header){
-  border:1px solid rgba(255,255,255,.25);
-  transition:border-color .25s ease,box-shadow .25s ease;
+border:1px solid rgba(255,255,255,.25);
+transition:border-color .25s ease,box-shadow .25s ease;
 }
 
 expandable-item:hover::part(base),
 expandable-item:hover::part(header),
 expandable-item:focus-within::part(base),
 expandable-item:focus-within::part(header){
-  border-color:rgba(255,255,255,.8);
-  box-shadow:0 0 10px rgba(255,255,255,.6);
+border-color:rgba(255,255,255,.8);
+box-shadow:0 0 10px rgba(255,255,255,.6);
+}
+.character .profile,
+expandable-item{
+position:relative;
+z-index:5;
 }
 
-/* ======================================================
-   HEADINGS
-====================================================== */
-
-.gallery h3,
-.logs h3{
-  color:red;
-  font-weight:600;
+.gallery h3,.logs h3{
+color:red;
+font-weight:600;
+font-family:'Rajdhani',sans-serif;
 }
 
-/* ======================================================
-   CIRCUIT ANIMATION
-====================================================== */
+/* ================= NEW ENERGY ANIMATION ================= */
 
-@keyframes circuitFlowA{
-  from{background-position:0 100%,0 90%;}
-  to{background-position:0 -450%,0 -420%;}
+@keyframes energySpider{
+
+0%{
+opacity:0;
+background-position:
+0% 0%,0% 0%,0% 0%,0% 0%,0% 0%,
+0% 0%,0% 0%,0% 0%,0% 0%,0% 0%;
 }
 
-@keyframes circuitFlowB{
-  from{background-position:0 70%,0 60%;}
-  to{background-position:0 -380%,0 -360%;}
+6%{opacity:1;}
+
+14%{
+background-position:
+55% 22%,30% 70%,65% 48%,45% 20%,25% 50%,
+50% 65%,70% 0%,0% 70%,40% 12%,12% 40%;
 }
 
-/* gallery & logs headings */
-.gallery h3,.logs h3 {color:red;font-weight:500;font-family:'Rajdhani',sans-serif;}
+22%{
+background-position:
+100% 40%,60% 100%,100% 78%,80% 30%,55% 90%,
+95% 95%,100% 0%,0% 100%,75% 18%,18% 75%;
+}
+
+28%{
+background-position:
+130% 55%,80% 130%,135% 105%,115% 45%,85% 125%,
+130% 130%,130% 0%,-30% 130%,105% 28%,28% 105%;
+}
+
+34%{opacity:.3;}
+
+40%{opacity:0;}
+
+100%{opacity:0;}
+}
