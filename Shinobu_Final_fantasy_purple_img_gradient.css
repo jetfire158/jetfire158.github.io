@@ -6,6 +6,7 @@ main {
   background: url('https://cdn.imgchest.com/files/ba7f559deba9.png');
   background-size: cover !important;
   background-position: center;
+  background-attachment: fixed;
   color: #f1e8ff;
 }
 
