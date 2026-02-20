@@ -47,31 +47,23 @@ background-repeat:no-repeat;
 background-size:
 26% 26%,22% 22%,28% 28%,20% 20%,24% 24%,
 23% 23%,25% 25%,25% 25%,21% 21%,21% 21%;
-0%{
-background-position:
-50% 50%,50% 50%,50% 50%,50% 50%,50% 50%,
-50% 50%,50% 50%,50% 50%,50% 50%,50% 50%;
-}
 
 animation:centerPulse 5s ease-out infinite;
 
 -webkit-mask-image:url("https://gist.githubusercontent.com/jetfire158/b78bee35bd71c599b6cd8bdd88493c4a/raw/4b2a314b579a4b672c4c1dbc4f702a54afe77d45/electric_circuit.svg");
 mask-image:url("https://gist.githubusercontent.com/jetfire158/b78bee35bd71c599b6cd8bdd88493c4a/raw/4b2a314b579a4b672c4c1dbc4f702a54afe77d45/electric_circuit.svg");
--webkit-mask-origin:content-box;
-mask-origin:content-box;
-
--webkit-mask-clip:content-box;
-mask-clip:content-box;
 -webkit-mask-size:cover;
 mask-size:cover;
 -webkit-mask-repeat:no-repeat;
 mask-repeat:no-repeat;
--webkit-mask-origin:content-box;
-mask-origin:content-box;
+-webkit-mask-origin:border-box;
+mask-origin:border-box;
 
--webkit-mask-clip:content-box;
-mask-clip:content-box;
+-webkit-mask-clip:border-box;
+mask-clip:border-box;
 mix-blend-mode:screen;
+-webkit-mask-position:center;
+mask-position:center;
 opacity:.6;
 
 filter:blur(.6px)
@@ -85,16 +77,21 @@ drop-shadow(0 0 12px rgba(255,20,20,.10));
 main::after{
 content:"";
 position:fixed;
+top:0;
+left:0;
+width:100vw;
+height:100vh;
 inset:0;
 pointer-events:none;
 z-index:0;
 
 /* faint circuit color */
 background-color:#ff2a2a;
-background-origin:content-box;
-background-clip:content-box;
-background-origin:content-box;
-background-clip:content-box;
+-webkit-mask-origin:border-box;
+mask-origin:border-box;
+
+-webkit-mask-clip:border-box;
+mask-clip:border-box;
 -webkit-mask-image:url("https://gist.githubusercontent.com/jetfire158/b78bee35bd71c599b6cd8bdd88493c4a/raw/4b2a314b579a4b672c4c1dbc4f702a54afe77d45/electric_circuit.svg");
 mask-image:url("https://gist.githubusercontent.com/jetfire158/b78bee35bd71c599b6cd8bdd88493c4a/raw/4b2a314b579a4b672c4c1dbc4f702a54afe77d45/electric_circuit.svg");
 
@@ -102,7 +99,8 @@ mask-image:url("https://gist.githubusercontent.com/jetfire158/b78bee35bd71c599b6
 mask-size:cover;
 -webkit-mask-repeat:no-repeat;
 mask-repeat:no-repeat;
-
+-webkit-mask-position:center;
+mask-position:center;
 opacity:.07;
 mix-blend-mode:screen;
 
