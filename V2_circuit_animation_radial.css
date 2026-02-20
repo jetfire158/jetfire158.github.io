@@ -66,7 +66,11 @@ mask-clip:content-box;
 mask-size:cover;
 -webkit-mask-repeat:no-repeat;
 mask-repeat:no-repeat;
+-webkit-mask-origin:content-box;
+mask-origin:content-box;
 
+-webkit-mask-clip:content-box;
+mask-clip:content-box;
 mix-blend-mode:screen;
 opacity:.6;
 
@@ -87,6 +91,8 @@ z-index:0;
 
 /* faint circuit color */
 background-color:#ff2a2a;
+background-origin:content-box;
+background-clip:content-box;
 background-origin:content-box;
 background-clip:content-box;
 -webkit-mask-image:url("https://gist.githubusercontent.com/jetfire158/b78bee35bd71c599b6cd8bdd88493c4a/raw/4b2a314b579a4b672c4c1dbc4f702a54afe77d45/electric_circuit.svg");
