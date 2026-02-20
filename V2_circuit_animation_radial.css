@@ -48,7 +48,7 @@ background-size:
 26% 26%,22% 22%,28% 28%,20% 20%,24% 24%,
 23% 23%,25% 25%,25% 25%,21% 21%,21% 21%;
 
-animation:centerPulse 5s ease-out infinite;
+animation:centerPulse 8s ease-out infinite;
 
 -webkit-mask-image:url("https://gist.githubusercontent.com/jetfire158/b78bee35bd71c599b6cd8bdd88493c4a/raw/4b2a314b579a4b672c4c1dbc4f702a54afe77d45/electric_circuit.svg");
 mask-image:url("https://gist.githubusercontent.com/jetfire158/b78bee35bd71c599b6cd8bdd88493c4a/raw/4b2a314b579a4b672c4c1dbc4f702a54afe77d45/electric_circuit.svg");
