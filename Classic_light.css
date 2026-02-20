@@ -1,0 +1,104 @@
+/*Clean version with notes for documentation and previewing in browser dev tools:*/
+
+/*Import from Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Garamond&display=swap');
+
+/* MAIN BACKGROUND */
+main {
+  background: linear-gradient(180deg, #f5f1e0, #e0d8c0), url('PUT_YOUR_BACKGROUND_IMAGE_HERE');
+  background-size: cover !important;
+  background-position: center;
+  color: #111;
+}
+
+/* PROFILE BOX */
+main .character .profile {
+  background: linear-gradient(135deg, rgba(245,241,224,0.85), rgba(224,216,192,0.9));
+  border: 1px solid rgba(180,160,130,0.35) !important;
+  color: #111;
+  font-family: 'Garamond', serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+/* PROFILE LABELS */
+main .character .profile label {
+  display: inline-block;
+  font-family: 'Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #333;
+  letter-spacing: 0.05em !important;
+}
+
+/* EXPANDABLE HEADER */
+expandable-item::part(header) {
+  background: rgba(224,216,192,0.9);
+  border: 1px solid rgba(180,160,130,0.3);
+  font-family: 'Garamond', serif;
+  font-weight: 700;
+  color: #111;
+}
+
+/* HEADER TITLE */
+expandable-item::part(name) {
+  color: #111;
+  font-family: 'Garamond', serif;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* HEADER SUMMARY */
+expandable-item::part(summary) {
+  color: #333;
+  font-family: 'Garamond', serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+/* BASE PANEL */
+expandable-item::part(base) {
+  border: 1px solid rgba(180,160,130,0.25);
+  background: linear-gradient(135deg, rgba(245,241,224,0.85), rgba(224,216,192,0.9));
+}
+
+/* BODY CONTENT */
+expandable-item::part(body) {
+  color: #111;
+  background: linear-gradient(135deg, rgba(245,241,224,0.85), rgba(224,216,192,0.9));
+  border: 1px solid rgba(180,160,130,0.2);
+  font-family: 'Garamond', serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+/* HOVER GLOW */
+expandable-item:hover::part(base),
+expandable-item:hover::part(header) {
+  border-color: rgba(100,80,60,0.8);
+  box-shadow: 0 0 10px rgba(100,80,60,0.8);
+}
+
+/* CHARACTER NAME */
+main .character .name {
+  color: #111 !important;
+  font-family: 'Garamond', serif !important;
+}
+
+/* GALLERY & LOGS HEADER TEXT */
+.gallery h3,
+.logs h3 {
+  color: #111;
+  font-family: 'Garamond', serif;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+==============================================================
+/*Escaped in-line version for pasting directly into +info css*/
+@import url('https://fonts.googleapis.com/css2?family=Garamond&display=swap');main \{background: linear-gradient(180deg, #f5f1e0, #e0d8c0), url('PUT_YOUR_BACKGROUND_IMAGE_HERE'); background-size: cover !important; background-position: center; color: #111;\}main .character .profile \{background: linear-gradient(135deg, rgba(245,241,224,0.85), rgba(224,216,192,0.9)); border: 1px solid rgba(180,160,130,0.35) !important; color: #111; font-family: 'Garamond', serif; font-size: 1rem; line-height: 1.5rem;\}main .character .profile label \{display: inline-block; font-family: 'Garamond', serif; font-size: 1.3rem; font-weight: 700; color: #333; letter-spacing: 0.05em !important;\}expandable-item::part(header) \{background: rgba(224,216,192,0.9); border: 1px solid rgba(180,160,130,0.3); font-family: 'Garamond', serif; font-weight: 700; color: #111;\}expandable-item::part(name) \{color: #111; font-family: 'Garamond', serif; font-weight: 700; letter-spacing: 0.05em;\}expandable-item::part(summary) \{color: #333; font-family: 'Garamond', serif; font-weight: 400; font-size: 1rem;\}expandable-item::part(base) \{border: 1px solid rgba(180,160,130,0.25); background: linear-gradient(135deg, rgba(245,241,224,0.85), rgba(224,216,192,0.9));\}expandable-item::part(body) \{color: #111; background: linear-gradient(135deg, rgba(245,241,224,0.85), rgba(224,216,192,0.9)); border: 1px solid rgba(180,160,130,0.2); font-family: 'Garamond', serif; font-weight: 400; font-size: 1rem; line-height: 1.4rem;\}expandable-item:hover::part(base), expandable-item:hover::part(header) \{border-color: rgba(100,80,60,0.8); box-shadow: 0 0 10px rgba(100,80,60,0.8);\}main .character .name \{color: #111 !important; font-family: 'Garamond', serif !important;\}.gallery h3, .logs h3 \{color: #111; font-family: 'Garamond', serif; font-weight: 700; letter-spacing: 0.05em;\}
+
+
+
+

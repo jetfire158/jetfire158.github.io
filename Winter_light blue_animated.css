@@ -1,0 +1,155 @@
+/*Clean version with notes for documentation and previewing in browser dev tools:*/
+/*Import from Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:wght@400;500&display=swap');
+
+/* MAIN BACKGROUND */
+main {
+  position: relative;
+  background: url('https://i.imgur.com/KrvJbHf.png');
+  background-size: 100% auto !important; /* prevents heavy upscaling blur */
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #eaf4ff;
+  overflow: hidden;
+
+  /* subtle sharpening trick */
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* SNOW LAYER 1 */
+main::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1.5px 1.5px at 60px 110px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(2px 2px at 90px 40px, rgba(255,255,255,0.5), transparent);
+  background-size: 200px 200px;
+  animation: snowDrift 30s linear infinite;
+  opacity: 0.6;
+}
+
+/* SNOW LAYER 2 — slower, blurrier */
+main::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(3px 3px at 50px 60px, rgba(255,255,255,0.5), transparent),
+    radial-gradient(2px 2px at 120px 140px, rgba(255,255,255,0.4), transparent),
+    radial-gradient(3px 3px at 160px 40px, rgba(255,255,255,0.5), transparent);
+  background-size: 300px 300px;
+  animation: snowDriftSlow 60s linear infinite;
+  filter: blur(1px);
+  opacity: 0.5;
+}
+
+/* ANIMATIONS */
+@keyframes snowDrift {
+  0%   { transform: translateY(-10px) translateX(0); }
+  50%  { transform: translateY(400px) translateX(20px); }
+  100% { transform: translateY(800px) translateX(-20px); }
+}
+
+@keyframes snowDriftSlow {
+  0%   { transform: translateY(-20px) translateX(0); }
+  50%  { transform: translateY(500px) translateX(-30px); }
+  100% { transform: translateY(1000px) translateX(30px); }
+}
+
+/* PROFILE BOX */
+main .character .profile {
+  background: linear-gradient(135deg, rgba(180,210,255,0.25), rgba(40,70,120,0.55));
+  border: 1px solid rgba(200,230,255,0.45) !important;
+  box-shadow: 0 0 18px rgba(150,200,255,0.35);
+  color: #eef6ff;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  line-height: 1.45rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+/* PROFILE LABELS */
+main .character .profile label {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #dff2ff;
+  letter-spacing: 0.12em !important;
+}
+
+/* EXPANDABLE HEADER */
+expandable-item::part(header) {
+  background: linear-gradient(180deg, rgba(120,170,255,0.35), rgba(20,40,80,0.75));
+  border: 1px solid rgba(200,230,255,0.45);
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  color: #f0f8ff;
+  text-shadow: 0 0 6px rgba(150,200,255,0.6);
+}
+
+/* HEADER TITLE */
+expandable-item::part(name) {
+  color: #f0f8ff;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+/* HEADER SUMMARY */
+expandable-item::part(summary) {
+  color: #cfe6ff;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+}
+
+/* BASE PANEL */
+expandable-item::part(base) {
+  border: 1px solid rgba(200,230,255,0.35);
+  background: linear-gradient(135deg, rgba(180,210,255,0.25), rgba(40,70,120,0.55));
+}
+
+/* BODY CONTENT */
+expandable-item::part(body) {
+  color: #eef6ff;
+  background: linear-gradient(135deg, rgba(180,210,255,0.25), rgba(40,70,120,0.55));
+  border: 1px solid rgba(200,230,255,0.3);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  line-height: 1.45rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+/* HOVER GLOW */
+expandable-item:hover::part(base),
+expandable-item:hover::part(header) {
+  border-color: rgba(220,240,255,0.9);
+  box-shadow: 0 0 18px rgba(180,220,255,0.8);
+}
+
+/* CHARACTER NAME */
+main .character .name {
+  color: #f0f8ff !important;
+  font-family: 'Cinzel', serif !important;
+  letter-spacing: 0.3em;
+  text-shadow: 0 0 8px rgba(180,220,255,0.7);
+}
+
+/* GALLERY & LOGS HEADERS */
+.gallery h3,
+.logs h3 {
+  color: #f0f8ff;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-shadow: 0 0 6px rgba(150,200,255,0.6);
+}
+body {--primary-bg:#b5e1ff; --secondary-bg:#7eadcc}
+/*Escaped in-line version for pasting directly into +info css*/
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:wght@400;500&display=swap'); main \{position:relative;background:url('https://i.imgur.com/KrvJbHf.png');background-size:100% auto!important;background-position:center top;background-repeat:no-repeat;background-attachment:fixed;color:#eaf4ff;overflow:hidden;image-rendering:-webkit-optimize-contrast;\} main::before \{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(2px 2px at 20px 30px,rgba(255,255,255,0.8),transparent),radial-gradient(2px 2px at 40px 70px,rgba(255,255,255,0.6),transparent),radial-gradient(1.5px 1.5px at 60px 110px,rgba(255,255,255,0.7),transparent),radial-gradient(2px 2px at 90px 40px,rgba(255,255,255,0.5),transparent);background-size:200px 200px;animation:snowDrift 30s linear infinite;opacity:0.6;\} main::after \{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(3px 3px at 50px 60px,rgba(255,255,255,0.5),transparent),radial-gradient(2px 2px at 120px 140px,rgba(255,255,255,0.4),transparent),radial-gradient(3px 3px at 160px 40px,rgba(255,255,255,0.5),transparent);background-size:300px 300px;animation:snowDriftSlow 60s linear infinite;filter:blur(1px);opacity:0.5;\} @keyframes snowDrift \{0% \{transform:translateY(-10px) translateX(0);\}50% \{transform:translateY(400px) translateX(20px);\}100% \{transform:translateY(800px) translateX(-20px);\}\} @keyframes snowDriftSlow \{0% \{transform:translateY(-20px) translateX(0);\}50% \{transform:translateY(500px) translateX(-30px);\}100% \{transform:translateY(1000px) translateX(30px);\}\} main .character .profile \{background:linear-gradient(135deg,rgba(180,210,255,0.25),rgba(40,70,120,0.55));border:1px solid rgba(200,230,255,0.45)!important;box-shadow:0 0 18px rgba(150,200,255,0.35);color:#eef6ff;font-family:'Cormorant Garamond',serif;font-size:0.95rem;line-height:1.45rem;text-shadow:0 2px 4px rgba(0,0,0,0.6);\} main .character .profile label \{display:inline-block;font-family:'Cinzel',serif;font-size:1.4rem;font-weight:700;color:#dff2ff;letter-spacing:0.12em!important;\} expandable-item::part(header) \{background:linear-gradient(180deg,rgba(120,170,255,0.35),rgba(20,40,80,0.75));border:1px solid rgba(200,230,255,0.45);font-family:'Cinzel',serif;font-weight:700;color:#f0f8ff;text-shadow:0 0 6px rgba(150,200,255,0.6);\} expandable-item::part(name) \{color:#f0f8ff;font-family:'Cinzel',serif;font-weight:700;letter-spacing:0.06em;\} expandable-item::part(summary) \{color:#cfe6ff;font-family:'Cormorant Garamond',serif;font-size:0.95rem;\} expandable-item::part(base) \{border:1px solid rgba(200,230,255,0.35);background:linear-gradient(135deg,rgba(180,210,255,0.25),rgba(40,70,120,0.55));\} expandable-item::part(body) \{color:#eef6ff;background:linear-gradient(135deg,rgba(180,210,255,0.25),rgba(40,70,120,0.55));border:1px solid rgba(200,230,255,0.3);font-family:'Cormorant Garamond',serif;font-size:0.95rem;line-height:1.45rem;text-shadow:0 2px 4px rgba(0,0,0,0.6);\} expandable-item:hover::part(base),expandable-item:hover::part(header) \{border-color:rgba(220,240,255,0.9);box-shadow:0 0 18px rgba(180,220,255,0.8);\} main .character .name \{color:#f0f8ff!important;font-family:'Cinzel',serif!important;letter-spacing:0.3em;text-shadow:0 0 8px rgba(180,220,255,0.7);\} .gallery h3,.logs h3 \{color:#f0f8ff;font-family:'Cinzel',serif;font-weight:700;letter-spacing:0.06em;text-shadow:0 0 6px rgba(150,200,255,0.6);\} body \{--primary-bg:#b5e1ff;--secondary-bg:#7eadcc;\}

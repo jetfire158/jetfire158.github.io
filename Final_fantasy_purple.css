@@ -1,0 +1,106 @@
+/*Clean version with notes for documentation and previewing in browser dev tools:*/
+/* Import from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@400;600&family=Cormorant+Garamond:wght@400;500&display=swap');
+
+/* MAIN BACKGROUND — deep aether sky */
+main {
+  background: radial-gradient(circle at top, #3a1b4f, #12071a 70%), url('PUT_YOUR_BACKGROUND_IMAGE_HERE');
+  background-size: cover !important;
+  background-position: center;
+  color: #f1e8ff;
+}
+
+/* PROFILE BOX — glass crystal panel */
+main .character .profile {
+  background: linear-gradient(135deg, rgba(70,30,90,0.75), rgba(25,10,40,0.9));
+  border: 1px solid rgba(210,170,255,0.35) !important;
+  box-shadow: 0 0 14px rgba(190,120,255,0.25);
+  color: #f1e8ff;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  line-height: 1.45rem;
+}
+
+/* PROFILE LABELS — narrow elegant display */
+main .character .profile label {
+  display: inline-block;
+  font-family: 'Cormorant SC', serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #e6ccff;
+  letter-spacing: 0.12em !important;
+}
+
+/* EXPANDABLE HEADER — FFXIV menu bar */
+expandable-item::part(header) {
+  background: linear-gradient(180deg, rgba(90,40,120,0.85), rgba(25,10,40,0.95));
+  border: 1px solid rgba(210,170,255,0.35);
+  font-family: 'Cormorant SC', serif;
+  font-weight: 600;
+  color: #f6edff;
+  text-shadow: 0 0 6px rgba(255,220,130,0.8);
+}
+
+/* HEADER TITLE */
+expandable-item::part(name) {
+  color: #f6edff;
+  font-family: 'Cormorant SC', serif;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-shadow: 0 0 6px rgba(255,220,130,0.8);
+}
+
+/* HEADER SUMMARY */
+expandable-item::part(summary) {
+  color: #e0ccff;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+}
+
+/* BASE PANEL */
+expandable-item::part(base) {
+  border: 1px solid rgba(210,170,255,0.25);
+  background: linear-gradient(135deg, rgba(70,30,90,0.75), rgba(25,10,40,0.9));
+}
+
+/* BODY CONTENT */
+expandable-item::part(body) {
+  color: #f1e8ff;
+  background: linear-gradient(135deg, rgba(70,30,90,0.75), rgba(25,10,40,0.9));
+  border: 1px solid rgba(210,170,255,0.2);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  line-height: 1.45rem;
+}
+
+/* HOVER — aether glow */
+expandable-item:hover::part(base),
+expandable-item:hover::part(header) {
+  border-color: rgba(230,200,255,0.8);
+  box-shadow: 0 0 16px rgba(255,220,130,0.6);
+}
+
+/* CHARACTER NAME */
+main .character .name {
+  color: #f6edff !important;
+  font-family: 'Cormorant SC', serif !important;
+  letter-spacing: 0.4em;   /* FF logo feel */
+  text-shadow: 0 0 6px rgba(255,220,130,0.8);
+}
+
+/* GALLERY & LOGS HEADERS */
+.gallery h3,
+.logs h3 {
+  color: #f6edff;
+  font-family: 'Cormorant SC', serif;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-shadow: 0 0 6px rgba(255,220,130,0.8);
+}
+
+
+===============
+
+/*Escaped in-line version for pasting directly into +info css*/
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@400;600&family=Cormorant+Garamond:wght@400;500&display=swap');main \{background: radial-gradient(circle at top, #3a1b4f, #12071a 70%), url('PUT_YOUR_BACKGROUND_IMAGE_HERE'); background-size: cover !important; background-position: center; color: #f1e8ff;\}main .character .profile \{background: linear-gradient(135deg, rgba(70,30,90,0.75), rgba(25,10,40,0.9)); border: 1px solid rgba(210,170,255,0.35) !important; box-shadow: 0 0 14px rgba(190,120,255,0.25); color: #f1e8ff; font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; line-height: 1.45rem;\}main .character .profile label \{display: inline-block; font-family: 'Cormorant SC', serif; font-size: 1.35rem; font-weight: 600; color: #e6ccff; letter-spacing: 0.12em !important;\}expandable-item::part(header) \{background: linear-gradient(180deg, rgba(90,40,120,0.85), rgba(25,10,40,0.95)); border: 1px solid rgba(210,170,255,0.35); font-family: 'Cormorant SC', serif; font-weight: 600; color: #f6edff; text-shadow: 0 0 6px rgba(255,220,130,0.8);\}expandable-item::part(name) \{color: #f6edff; font-family: 'Cormorant SC', serif; font-weight: 600; letter-spacing: 0.06em; text-shadow: 0 0 6px rgba(255,220,130,0.8);\}expandable-item::part(summary) \{color: #e0ccff; font-family: 'Cormorant Garamond', serif; font-size: 0.95rem;\}expandable-item::part(base) \{border: 1px solid rgba(210,170,255,0.25); background: linear-gradient(135deg, rgba(70,30,90,0.75), rgba(25,10,40,0.9));\}expandable-item::part(body) \{color: #f1e8ff; background: linear-gradient(135deg, rgba(70,30,90,0.75), rgba(25,10,40,0.9)); border: 1px solid rgba(210,170,255,0.2); font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; line-height: 1.45rem;\}expandable-item:hover::part(base), expandable-item:hover::part(header) \{border-color: rgba(230,200,255,0.8); box-shadow: 0 0 16px rgba(255,220,130,0.6);\}main .character .name \{color: #f6edff !important; font-family: 'Cormorant SC', serif !important; letter-spacing: 0.4em; text-shadow: 0 0 6px rgba(255,220,130,0.8);\}.gallery h3, .logs h3 \{color: #f6edff; font-family: 'Cormorant SC', serif; font-weight: 600; letter-spacing: 0.06em; text-shadow: 0 0 6px rgba(255,220,130,0.8);\}
+
