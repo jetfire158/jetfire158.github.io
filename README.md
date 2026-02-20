@@ -1,3 +1,3 @@
-Hosting for CSS stylesheet
+Hosting for CSS stylesheets
 
 jetfire158.github.io
