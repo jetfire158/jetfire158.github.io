@@ -1,0 +1,107 @@
+/*Clean version with notes for documentation and previewing in browser dev tools:*/
+/*Import from Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@400;600&family=Cormorant+Garamond:wght@400;500&display=swap');
+
+/* MAIN BACKGROUND */
+main {
+  background:url('https://i.imgur.com/VrT3fb8.jpeg');
+  background-size: cover !important;
+  background-position: center;
+  color: #f5efe4;
+  text-shadow: 0 1px 2px rgba(40,25,10,0.45);
+  background-attachment: fixed;
+}
+
+/* PROFILE BOX */
+main .character .profile {
+  background: linear-gradient(135deg, rgba(230,205,155,0.75), rgba(120,90,55,0.85));
+  border: 1px solid rgba(210,175,110,0.55) !important;
+  box-shadow: 0 0 14px rgba(190,150,90,0.25);
+  color: #f5efe4;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  line-height: 1.45rem;
+  text-shadow: 0 3px 4px rgba(37,37,37,0.6);
+}
+
+/* PROFILE LABELS */
+main .character .profile label {
+  display: inline-block;
+  font-family: 'Cormorant SC', serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #f0ddb2;
+  letter-spacing: 0.12em !important;
+  text-shadow: 0 4px 5px rgba(37,37,37,0.6);
+}
+
+/* EXPANDABLE HEADER */
+expandable-item::part(header) {
+  background: linear-gradient(180deg, rgba(215,185,130,0.85), rgba(95,70,40,0.95));
+  border: 1px solid rgba(210,175,110,0.55);
+  font-family: 'Cormorant SC', serif;
+  font-weight: 600;
+  color: #fff6dd;
+  text-shadow: 0 1px 3px rgba(40,25,10,0.6);
+}
+
+/* HEADER TITLE */
+expandable-item::part(name) {
+  color: #fff6dd;
+  font-family: 'Cormorant SC', serif;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-shadow: 0 1px 3px rgba(40,25,10,0.6);
+}
+
+/* HEADER SUMMARY */
+expandable-item::part(summary) {
+  color: #eadbb7;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  text-shadow: 0 1px 2px rgba(40,25,10,0.45);
+}
+
+/* BASE PANEL */
+expandable-item::part(base) {
+  border: 1px solid rgba(210,175,110,0.45);
+  background: linear-gradient(135deg, rgba(230,205,155,0.75), rgba(120,90,55,0.85));
+}
+
+/* BODY CONTENT */
+expandable-item::part(body) {
+  color: #f5efe4;
+  background: linear-gradient(135deg, rgba(230,205,155,0.75), rgba(120,90,55,0.85));
+  border: 1px solid rgba(210,175,110,0.35);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  line-height: 1.45rem;
+  text-shadow: 0 2px 3px rgba(37,37,37,1);
+}
+
+/* HOVER */
+expandable-item:hover::part(base),
+expandable-item:hover::part(header) {
+  border-color: rgba(255,220,150,0.9);
+  box-shadow: 0 0 16px rgba(210,175,110,0.8);
+}
+
+/* CHARACTER NAME */
+main .character .name {
+  color: #fff6dd !important;
+  font-family: 'Cormorant SC', serif !important;
+  letter-spacing: 0.4em;
+  text-shadow: 0 2px 4px rgba(40,25,10,0.7);
+}
+
+/* GALLERY & LOGS HEADERS */
+.gallery h3,
+.logs h3 {
+  color: #694e27;
+  font-family: 'Cormorant SC', serif;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-shadow: 0 5px 6px rgba(37,37,37,1);
+}
+
+
