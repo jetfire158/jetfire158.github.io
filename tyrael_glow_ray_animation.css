@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:wght@400;500&display=swap');
+
+/* MAIN BACKGROUND */
+main {
+  position: relative;
+  background: url('https://i.imgur.com/JQCmJqC.png');
+  background-size: 100% auto !important; /* prevents aggressive upscaling */
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #eef6ff;
+  overflow: hidden;
+
+  /* slight sharpening hint */
+  image-rendering: -webkit-optimize-contrast;
+background-size: 90% auto !important;
+}
+/* AETHER LIGHT */
+main::before {
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255,255,255,0.35), transparent 40%),
+    radial-gradient(circle at 70% 45%, rgba(180,220,255,0.25), transparent 50%),
+    radial-gradient(circle at 50% 80%, rgba(255,230,170,0.20), transparent 60%);
+  animation:heavenGlow 20s ease-in-out infinite alternate;
+}
+
+/* GLOW ANIMATION */
+@keyframes heavenGlow{
+  0%{opacity:.4;transform:scale(1);}
+  100%{opacity:.7;transform:scale(1.03);}
+}
+
+/* PROFILE BOX */
+main .character .profile{
+  background:linear-gradient(135deg,rgba(255,255,255,.35),rgba(170,200,255,.25));
+  border:1px solid rgba(255,220,150,.6)!important;
+  box-shadow:0 0 20px rgba(255,230,170,.5);
+  color:#ffffff;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.95rem;
+  line-height:1.45rem;
+  text-shadow:0 2px 4px rgba(0,0,0,.7);
+}
+
+/* PROFILE BOX */
+main .character .profile{
+  background: linear-gradient(135deg, rgba(40,60,90,0.75), rgba(20,35,60,0.85));
+  border: 1px solid rgba(255,220,150,0.65) !important;
+  box-shadow: 0 0 20px rgba(255,230,170,0.45);
+  color: #ffffff;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.95rem;
+  line-height:1.45rem;
+  text-shadow:0 2px 4px rgba(0,0,0,.85);
+}
+
+/* EXPANDABLE HEADER */
+expandable-item::part(header){
+  background:linear-gradient(180deg,rgba(255,255,255,.45),rgba(150,180,255,.25));
+  border:1px solid rgba(255,220,150,.7);
+  font-family:'Cinzel',serif;
+  font-weight:700;
+  color:#ffffff;
+  text-shadow:0 0 10px rgba(255,230,170,.8);
+}
+
+/* HEADER TITLE */
+expandable-item::part(name){
+  color:#ffffff;
+  font-family:'Cinzel',serif;
+  font-weight:700;
+  letter-spacing:.06em;
+}
+
+/* HEADER SUMMARY */
+expandable-item::part(summary){
+  color:#d9e8ff;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.95rem;
+}
+/* BASE PANEL */
+expandable-item::part(base){
+  border:1px solid rgba(255,220,150,.55);
+  background:linear-gradient(135deg, rgba(40,60,90,0.6), rgba(20,35,60,0.85));
+}
+/* BODY CONTENT */
+expandable-item::part(body){
+  color:#ffffff;
+  background:linear-gradient(135deg, rgba(40,60,90,0.6), rgba(20,35,60,0.85));
+  border:1px solid rgba(255,220,150,.45);
+  font-family:'Cormorant Garamond',serif;
+  font-size:.95rem;
+  line-height:1.45rem;
+  text-shadow:0 2px 4px rgba(0,0,0,.85);
+  line-height:1.45rem;
+  text-shadow:0 2px 4px rgba(0,0,0,.7);
+}
+
+/* HOVER GLOW */
+expandable-item:hover::part(base),
+expandable-item:hover::part(header){
+  border-color:rgba(255,230,170,.9);
+  box-shadow:0 0 25px rgba(255,230,170,.9);
+}
+
+/* CHARACTER NAME */
+main .character .name{
+  color:#ffffff!important;
+  font-family:'Cinzel',serif!important;
+  letter-spacing:.35em;
+  text-shadow:3 6 14px rgba(255,230,170,1);
+}
+
+/* GALLERY & LOGS HEADERS */
+.gallery h3,
+.logs h3{
+  color:#ffffff;
+  font-family:'Cinzel',serif;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-shadow:0 0 10px rgba(255,230,170,.8);
+}
+body {
+  background: linear-gradient(180deg,#6fa6d9,#294a73 45%,#0f1f33);
+  --primary-bg:#294a73;
+  --secondary-bg:#0f1f33;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(255,230,170,0.25),transparent 60%),
+    linear-gradient(180deg,#6fa6d9,#294a73 45%,#0f1f33);
+}
+/* HEAVENLY LIGHT RAYS — BALANCED */
+
+main::before{
+  content:"";
+  position:absolute;
+  inset:-25%;
+  pointer-events:none;
+  z-index:0;
+
+  background:
+    radial-gradient(ellipse at 30% -40%, rgba(255,235,180,0.12), transparent 70%),
+    radial-gradient(ellipse at 70% -50%, rgba(255,235,180,0.10), transparent 75%),
+    radial-gradient(ellipse at 50% -35%, rgba(255,255,255,0.06), transparent 80%);
+
+  animation:heavenRays 45s ease-in-out infinite alternate;
+}
+
+/* DRIFT */
+
+@keyframes heavenRays{
+  from{
+    transform:translateX(-2%) translateY(-1%) scale(1);
+  }
+  to{
+    transform:translateX(2%) translateY(1%) scale(1.04);
+  }
+}
