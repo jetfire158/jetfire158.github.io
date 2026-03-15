@@ -21,9 +21,13 @@ main .character .name,
 }
 /* PAGE BACKGROUND */
 body{
-  background:linear-gradient(180deg,#555857,#3b3e3d);
-  --primary-bg:#3b3e3d;
-  --secondary-bg:#2c2f2e;
+  background-image:url('https://i.imgur.com/6VbC0QP.png');
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:top left;
+
+  --primary-bg:#4a4d4c;
+  --secondary-bg:#3b3e3d;
 }
 
 /* MAIN CONTAINER */
