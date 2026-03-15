@@ -29,7 +29,14 @@ body{
   --primary-bg:#4a4d4c;
   --secondary-bg:#3b3e3d;
 }
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
 
+  background:rgba(255,255,255,0.1); /* adjust opacity here */
+}
 /* MAIN CONTAINER */
 
 main{
