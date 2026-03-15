@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:wght@400;500&display=swap');
+
+/* PAGE BACKGROUND */
+
+body{
+  background:#0f1213;
+  --primary-bg:#2a2e2c;
+  --secondary-bg:#181b1c;
+}
+
+/* MAIN CONTAINER */
+
+main{
+  position:relative;
+  background:url('https://i.imgur.com/OqfejYt.jpeg');
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+  color:#f4ead2;
+  overflow:hidden;
+
+  animation:tyraelGem 10s ease-in-out infinite;
+}
+
+/* CRYSTAL RELIC GLOW */
+
+@keyframes tyraelGem{
+  0%{filter:brightness(1)}
+  50%{filter:brightness(1.08)}
+  100%{filter:brightness(1)}
+}
+
+/* EDGE SHADOW (TOP LIGHTENED) */
+
+main::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+
+  background:
+  radial-gradient(circle at center,
+  rgba(0,0,0,0) 55%,
+  rgba(0,0,0,.45) 100%);
+}
+
+/* FILIGREE PATTERN */
+
+main::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+
+  background:
+  repeating-conic-gradient(
+  from 0deg,
+  rgba(255,215,140,.03) 0deg 3deg,
+  transparent 3deg 12deg
+  );
+
+  opacity:.30;
+}
+
+/* PROFILE PANEL */
+
+main .character .profile{
+  background:linear-gradient(135deg,#2a2e2c,#1a1d1c);
+  border:1px solid #b89552 !important;
+
+  box-shadow:
+  inset 0 0 0 1px rgba(255,230,170,.25),
+  inset 0 2px 4px rgba(255,230,170,.15),
+  inset 0 -2px 4px rgba(0,0,0,.65),
+  0 0 14px rgba(0,0,0,.8);
+
+  color:#f4ead2;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.95rem;
+  line-height:1.45rem;
+}
+
+/* PROFILE LABELS */
+
+main .character .profile label{
+  font-family:'Cinzel',serif;
+  font-size:1.4rem;
+  font-weight:700;
+  color:#e3c98a;
+  letter-spacing:.12em!important;
+}
+
+/* EXPANDABLE HEADER */
+
+expandable-item::part(header){
+  background:linear-gradient(180deg,#3a3f40,#222627);
+  border:1px solid #c5a86b;
+
+  font-family:'Cinzel',serif;
+  font-weight:700;
+  color:#f3e3b0;
+
+  text-shadow:0 0 6px rgba(255,215,140,.35);
+}
+
+/* HEADER TITLE */
+
+expandable-item::part(name){
+  font-family:'Cinzel',serif;
+  letter-spacing:.08em;
+}
+
+/* HEADER SUMMARY */
+
+expandable-item::part(summary){
+  font-family:'Cormorant Garamond',serif;
+  color:#d5c7a0;
+}
+
+/* PANEL BODY */
+
+expandable-item::part(body){
+  background:linear-gradient(135deg,#2a2e2c,#1a1d1c);
+  border:1px solid #b89552;
+
+  color:#f4ead2;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.95rem;
+  line-height:1.45rem;
+}
+
+/* PANEL BASE */
+
+expandable-item::part(base){
+  border:1px solid #b89552;
+  background:linear-gradient(135deg,#2a2e2c,#1a1d1c);
+
+  box-shadow:
+  inset 0 0 0 1px rgba(255,230,170,.25),
+  inset 0 2px 4px rgba(255,230,170,.15),
+  inset 0 -2px 4px rgba(0,0,0,.65);
+}
+
+/* HOVER GLOW */
+
+expandable-item:hover::part(header),
+expandable-item:hover::part(base){
+  box-shadow:0 0 14px rgba(255,210,120,.45);
+  border-color:#e5c27a;
+}
+
+/* CHARACTER NAME */
+
+main .character .name{
+  color:#f3e3b0!important;
+  font-family:'Cinzel',serif!important;
+  letter-spacing:.35em;
+
+  text-shadow:
+  0 0 8px rgba(255,215,140,.35),
+  0 2px 4px rgba(0,0,0,.8);
+}
+
+/* GALLERY + LOGS */
+
+.gallery h3,
+.logs h3{
+  color:#e5c27a;
+  font-family:'Cinzel',serif;
+  letter-spacing:.08em;
+}
