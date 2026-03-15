@@ -1,23 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:wght@400;500&display=swap');
 
 /* PAGE BACKGROUND */
-
 body{
-  background:#0f1213;
-  --primary-bg:#2a2e2c;
-  --secondary-bg:#181b1c;
+  background:linear-gradient(180deg,#555857,#3b3e3d);
+  --primary-bg:#3b3e3d;
+  --secondary-bg:#2c2f2e;
 }
 
 /* MAIN CONTAINER */
 
 main{
   position:relative;
-  background:url('https://i.imgur.com/OqfejYt.jpeg');
-  background-size:cover;
-  background-position:center;
+  background-image:url('https://i.imgur.com/OqfejYt.jpeg');
+  background-size:100% auto;
+background-position:center top;
+  background-repeat:repeat;
   background-attachment:fixed;
   color:#f4ead2;
   overflow:hidden;
+}
 
   animation:tyraelGem 10s ease-in-out infinite;
 }
@@ -168,4 +169,68 @@ main .character .name{
   color:#e5c27a;
   font-family:'Cinzel',serif;
   letter-spacing:.08em;
+}
+/* ALL TEXT PANELS */
+
+main .character .profile{background:
+  linear-gradient(
+    135deg,
+    rgba(42,46,44,.88),
+    rgba(26,29,28,.90)
+  ),
+  linear-gradient(
+    110deg,
+    rgba(255,255,255,0) 40%,
+    rgba(255,230,160,.10) 50%,
+    rgba(255,255,255,0) 60%
+  );
+
+  background-size:
+  auto,
+  500px 100%;
+
+  background-repeat:no-repeat;
+
+  border:1px solid #b89552;
+
+  box-shadow:
+  inset 0 0 0 1px rgba(255,230,170,.25),
+  inset 0 2px 4px rgba(255,230,170,.15),
+  inset 0 -2px 4px rgba(0,0,0,.65),
+  0 0 14px rgba(0,0,0,.8);
+
+  animation:tyraelShimmer 12s linear infinite;
+}
+expandable-item::part(base),
+expandable-item::part(body),
+expandable-item::part(header){
+
+ background:
+  linear-gradient(
+    135deg,
+    rgba(42,46,44,.6),
+    rgba(26,29,28,.7)
+  ),
+  linear-gradient(
+    110deg,
+    rgba(255,255,255,0) 40%,
+    rgba(255,230,160,.10) 50%,
+    rgba(255,255,255,0) 60%
+  );
+
+  background-size:
+  auto,
+  500px 100%;
+
+  background-repeat:no-repeat;
+
+  border:1px solid #b89552;
+
+  box-shadow:
+  inset 0 0 0 1px rgba(255,230,170,.25),
+  inset 0 2px 4px rgba(255,230,170,.15),
+  inset 0 -2px 4px rgba(0,0,0,.65),
+  0 0 14px rgba(0,0,0,.8);
+
+  animation:tyraelShimmer 12s linear infinite;
 }
