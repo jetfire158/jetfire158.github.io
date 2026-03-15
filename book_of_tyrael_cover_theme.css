@@ -1,5 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:wght@400;500&display=swap');
-
+@font-face {
+  font-family: "Exocet";
+  src: url("https://jetfire158.github.io/exocet_light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Exocet_Medium";
+  src: url("https://jetfire158.github.io/Exocet_Medium.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+expandable-item::part(header),
+expandable-item::part(name),
+main .character .name,
+.gallery h3,
+.logs h3 {
+  font-family: "Exocet", serif !important;
+  letter-spacing: .18em;
+}
 /* PAGE BACKGROUND */
 body{
   background:linear-gradient(180deg,#555857,#3b3e3d);
@@ -154,7 +173,7 @@ expandable-item:hover::part(base){
 
 main .character .name{
   color:#f3e3b0!important;
-  font-family:'Cinzel',serif!important;
+  font-family:'Exocet_Medium',serif !important;
   letter-spacing:.35em;
 
   text-shadow:
