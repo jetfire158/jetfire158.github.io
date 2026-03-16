@@ -27,7 +27,7 @@ body{
   background-position:top left;
 
   --primary-bg:#4a4d4c;
-  --secondary-bg:#2e2d29;
+  --secondary-bg:#1a1917;
 }
 body::before{
   content:"";
