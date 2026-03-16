@@ -27,7 +27,7 @@ body{
   background-position:top left;
 
   --primary-bg:#4a4d4c;
-  --secondary-bg:#3b3e3d;
+  --secondary-bg:#2e2d29;
 }
 body::before{
   content:"";
@@ -35,7 +35,7 @@ body::before{
   inset:0;
   pointer-events:none;
 
-  background:rgba(255,255,255,0.1); /* adjust opacity here */
+  background:rgba(138, 114, 59,0.3); /* adjust opacity here */
 }
 /* MAIN CONTAINER */
 
