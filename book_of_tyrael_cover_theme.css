@@ -277,3 +277,8 @@ expandable-item::part(header){
 
   animation:tyraelShimmer 12s linear infinite;
 }
+
+/*profile text color override*/
+main .character .profile a{
+  color:#f4ead2 !important;
+}
