@@ -97,6 +97,10 @@ main .character .name {
   letter-spacing: 0.06em;
   text-shadow: 0
 }
+/*profile box color override*/
+main .character .profile a{
+  color:#e8f1ff !important;
+}
 ===============
 
 /*Escaped in-line version for pasting directly into +info css*/
