@@ -212,3 +212,7 @@ opacity:.25;
 opacity:0;
 background-size:260% 260%;
 }
+/*profile text color override*/
+main .character .profile a{
+  color:red !important;
+}
